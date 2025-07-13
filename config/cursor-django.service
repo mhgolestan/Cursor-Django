@@ -1,0 +1,35 @@
+# This is a systemd service file for running your Django app with Gunicorn
+#
+# Installation Instructions:
+# 1. Copy this file to /etc/systemd/system/ with:
+#    sudo cp config/cursor-django.service /etc/systemd/system/cursor-django.service
+# 2. Reload systemd to recognize the new service:
+#    sudo systemctl daemon-reload
+# 3. Enable the service to start on boot:
+#    sudo systemctl enable cursor-django
+# 4. Start the service now:
+#    sudo systemctl start cursor-django
+# 5. Check the status:
+#    sudo systemctl status cursor-django
+# 6. View logs:
+#    journalctl -u cursor-django -f
+#
+# Make sure to adjust 'User=' to your actual Linux username if needed.
+# Ensure your virtual environment and all paths are correct.
+#
+
+[Unit]
+Description=Gunicorn instance to serve Cursor-Django
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/opt/curser/projects/cursor-django
+Environment="PATH=/opt/curser/projects/cursor-django/venv/bin"
+ExecStart=/opt/curser/projects/cursor-django/venv/bin/gunicorn --reload --bind 0.0.0.0:8000 cursor_django.wsgi:application --reload --chdir src
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
