@@ -1,0 +1,18 @@
+Environment
+- CPU:         1 Core
+- RAM:         1 GB
+- Storage:     25 GB
+- Volumes:     0
+- Encrypted:   Yes
+- OS:         Ubuntu 24.04 LTS
+- new packages install - auto approve
+- update sustem rarely
+
+# My Info
+- My name: Mohammad Hossein Golestan
+- My email: golestan1369@gmail.com
+
+
+# Project
+- Repo url: https://github.com/mhgolestan/Cursor-Django
+- Repo Root: /opt/curser/projects/cursor-django
