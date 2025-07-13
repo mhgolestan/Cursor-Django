@@ -21,3 +21,4 @@ Environment
 - Django root folder: ´src´
 - Django project name: ´cursor_django´
 - Django runserver command: ´python manage.py runserver 0.0.0.0:8000´
+- Environment variables manaer: ´python-decouple´
