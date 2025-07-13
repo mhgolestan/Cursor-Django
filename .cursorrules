@@ -20,5 +20,5 @@ Environment
 - Python environment: ´vene´ at  /opt/curser/projects/cursor-django/venv
 - Django root folder: ´src´
 - Django project name: ´cursor_django´
-- Django runserver command: ´python manage.py runserver 0.0.0.0:8000´
+- Django runserver command: ´gunicorn --reload --bind 0.0.0.0:8000 src.cursor_django.wsgi:application --reload --pythonpath .´
 - Environment variables manaer: ´python-decouple´
